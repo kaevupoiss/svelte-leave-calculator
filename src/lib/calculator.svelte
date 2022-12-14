@@ -2,9 +2,9 @@
     <section>
         <h4>Compensation Calculator</h4>
         <form>
-            <Input name="averageIncome" type="€" label="Average Income" isNumeric="true"
+            <Input name="averageIncome" type="€" label="Average Income" isNumeric={true}
                    bind:value={averageIncome}/>
-            <Input name="daysOnLeave" type="days" label="Days on sick-leave" isNumeric="true"
+            <Input name="daysOnLeave" type="days" label="Days on sick-leave" isNumeric={true}
                    bind:value={daysOnSickLeave}/>
             <Checkbox name="isTuberculosis" label="I have tuberculosis" bind:checked={isTuberculosis}/>
             <Button content={"Calculate"} on:click={calculate}/>
@@ -33,8 +33,8 @@
     import Input from '$lib/input.svelte';
     import Checkbox from '$lib/checkbox.svelte';
 
-    let averageIncome: number;
-    let daysOnSickLeave: number;
+    let averageIncome: string = "";
+    let daysOnSickLeave: string = "";
     let isTuberculosis = false;
 
     let employerDays = 0;
@@ -51,14 +51,14 @@
     }
 
     function calculate(): void {
-        daysOnSickleaveCopy = daysOnSickLeave;
+        daysOnSickleaveCopy = parseInt(daysOnSickLeave);
 
         // Total days excluding unpaid
-        let totalDays = Math.min(daysOnSickLeave, isTuberculosis ? 240 : 182);
+        let totalDays = Math.min(parseInt(daysOnSickLeave), isTuberculosis ? 240 : 182);
         totalDays = Math.max(totalDays - 3, 0);
         // Average daily compensation
         // = 70% of average daily income
-        dailyComp = (0.7 * averageIncome / 30);
+        dailyComp = (0.7 * parseInt(averageIncome) / 30);
 
         employerDays = Math.min(totalDays, 5);
         employerAmount = employerDays * dailyComp;
@@ -138,9 +138,6 @@
         line-height: 30px;
       }
     }
-  }
-
-  .compensation-total {
   }
 
   form {

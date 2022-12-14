@@ -17,10 +17,12 @@
     export let name: string;
     export let type: string;
     export let label: string;
-    export let value: any;
+    export let value: string;
     export let isNumeric: boolean = false;
-</script>
 
+    $: value = isNumeric ? value.replace(/[^0-9]/g, '') : value;
+
+</script>
 <style lang="scss">
   @use '$lib/_variables.scss' as *;
 
@@ -30,10 +32,6 @@
 
   input {
     width: 100%;
-  }
-
-  input:valid {
-
   }
 
   label {
