@@ -1,8 +1,10 @@
 # Svelte Leave Calculator
 
-## Total time: 4h
+## Total time: 5h
 
-# create-svelte
+This was a fun exercise in which I decided to use Svelte with SCSS and TypeScript.
+
+## create-svelte
 
 Everything you need to build a Svelte project, powered
 by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
