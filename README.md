@@ -6,6 +6,13 @@ This was a fun exercise in which I decided to use Svelte with SCSS and TypeScrip
 
 ## Usage Guide
 
+### Requirements
+
+```node >= 16.14```
+```npm >= 8.15``` 
+
+### Usage:
+
 ```npm install```
 
 ```npm run dev```
