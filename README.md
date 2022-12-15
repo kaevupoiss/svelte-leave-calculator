@@ -8,7 +8,7 @@ This was a fun exercise in which I decided to use Svelte with SCSS and TypeScrip
 
 ### Requirements
 
-```node >= 16.14```
+```node >= 16.14 | >= 18.0 | >= 19.0```
 ```npm >= 8.15``` 
 
 ### Usage:
