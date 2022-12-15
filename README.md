@@ -4,10 +4,11 @@
 
 This was a fun exercise in which I decided to use Svelte with SCSS and TypeScript.
 
-## create-svelte
+## Usage Guide
 
-Everything you need to build a Svelte project, powered
-by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+```npm install```
+
+```npm run dev```
 
 ## Creating a project
 
